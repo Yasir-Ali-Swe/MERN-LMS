@@ -16,7 +16,7 @@ export default function Layout() {
             <div className="lg:hidden fixed top-2 left-2 z-50">
                 <button onClick={toggleSidebar}>
                     {
-                        open ? <RiMenuFold3Line size={28} className="bg-purple-800 text-white" /> : <RiMenuFold4Line size={28} className="text-purple-800" />
+                        open ? <RiMenuFold3Line size={28} className="text-textColor" /> : <RiMenuFold4Line size={28} className="text-textColor" />
                     }
                 </button>
             </div>

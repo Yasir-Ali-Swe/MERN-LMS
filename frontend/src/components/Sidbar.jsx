@@ -8,7 +8,7 @@ const Sidbar = () => {
             path: "/",
         },
         {
-            name: "Add Instructor",
+            name: "Manage Instructor",
             path: "/add-instructor",
         },
         {
@@ -29,15 +29,15 @@ const Sidbar = () => {
         }
     ]
     return (
-        <div className='h-screen w-full bg-purple-800 '>
+        <div className='h-screen w-full bg-secondary '>
             <div className='Logo py-10 '>
-                <h1 className='text-3xl text-center font-bold text-white'>
+                <h1 className='text-3xl text-center font-bold text-textColor'>
                     LMS
                 </h1>
             </div>
             <div>
                 {
-                    Routes.map((route) => <Link key={route.name} to={route.path} className={`text-xl font-semibold block my-2 py-2 px-15 text-left text-white hover:bg-purple-600 ${pathname === route.path && "bg-purple-600"}`}>{route.name}</Link>)
+                    Routes.map((route) => <Link key={route.name} to={route.path} className={`text-xl font-semibold block mx-1 rounded-lg my-2 py-2 px-[53px] text-left text-textColor hover:bg-primary ${pathname === route.path && "bg-primary shadow-sm shadow-textColor"}`}>{route.name}</Link>)
                 }
             </div>
         </div>
