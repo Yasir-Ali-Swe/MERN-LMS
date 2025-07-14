@@ -4,13 +4,13 @@ import { Outlet } from "react-router-dom";
 import { RiMenuFold3Line } from "react-icons/ri";
 import { RiMenuFold4Line } from "react-icons/ri";
 
-const SidebarWidth = 280;
+
 export default function Layout() {
     const [open, setOpen] = useState(false);
     const toggleSidebar = () => setOpen(!open);
     return (
         <div className="min-h-screen">
-            <div className={`fixed top-0 left-0 z-40 w-[${SidebarWidth}px] transition-transform duration-300 ease-in-out ${open ? "block" : "hidden"} lg:block`}>
+            <div className={`fixed top-0 left-0 z-40 w-[210px] lg:w-[280px] transition-transform duration-300 ease-in-out ${open ? "block" : "hidden"} lg:block`}>
                 <Sidbar />
             </div>
             <div className="lg:hidden fixed top-2 left-2 z-50">
