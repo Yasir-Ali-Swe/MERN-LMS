@@ -3,7 +3,7 @@ import React from 'react'
 const AddInstructor = () => {
   return (
     <div>
-        <h1 className='text-3xl font-bold underline text-purple-800 text-center'>Add Instructor</h1>
+        <h1 className='lg:fixed top-0 w-full z-50 py-2 text-center lg:text-left text-3xl font-bold bg-secondary text-textColor'>Add Instructor</h1>
     </div>
   )
 }
