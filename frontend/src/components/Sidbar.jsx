@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const Sidbar = () => {
@@ -38,7 +37,7 @@ const Sidbar = () => {
             </div>
             <div className='lg:mt-6'>
                 {
-                    Routes.map((route) => <Link key={route.name} to={route.path} className={`text-md lg:text-xl font-semibold block my-2 mx-2 rounded-lg py-2 px-6 lg:px-8 text-left text-textColor hover:bg-primary ${pathname === route.path && "bg-primary shadow-sm shadow-textColor"}`}>{route.name}</Link>)
+                    Routes.map((route) => <Link key={route.name} to={route.path} className={`text-md lg:text-xl font-semibold block my-2 mx-2 rounded-lg py-2 px-5 lg:px-8 text-left text-textColor hover:bg-primary ${pathname === route.path && "bg-primary shadow-sm shadow-textColor"}`}>{route.name}</Link>)
                 }
             </div>
         </div>
