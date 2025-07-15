@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import authRouter from "./routers/authRouter.js";
 import adminRouter from "./routers/adminRouter.js";
+import courseRouter from "./routers/courseRouter.js";
 
 dotenv.config();
 const server = express();
@@ -22,3 +23,4 @@ mongoose.connect(CONNECTION_STRING).then(() => {
 
 server.use("/auth", authRouter);
 server.use("/admin", adminRouter);
+server.use("/course", courseRouter);
