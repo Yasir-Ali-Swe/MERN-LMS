@@ -19,7 +19,7 @@ export const register = async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            role
+            role: "student"
         });
         res.status(200).json({ success: true, message: "User registered successfully", newUser })
     } catch (error) {
