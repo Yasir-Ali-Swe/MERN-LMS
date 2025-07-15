@@ -1,5 +1,6 @@
 import userModel from "../models/userModel.js";
 import bcrypt from "bcryptjs";
+import courseModel from "../models/courseModel.js";
 
 export const getAllUsers = async (req, res) => {
     try {
@@ -54,6 +55,17 @@ export const updateUser = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = await userModel.findByIdAndUpdate(userId, { name, email, password: hashedPassword, role }, { new: true });
         return res.status(200).json({ success: true, message: "User updated successfully", user })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: "Internal Server Error" })
+    }
+}
+
+export const adminPublishCourse = async (req, res) => {
+    try {
+        const courseId = req.params.id;
+        const course=await courseModel.findByIdAndUpdate(courseId,{published:true},{new:true});
+        return res.status(200).json({ success: true, message: "Course published successfully", course })
     } catch (error) {
         console.log(error);
         res.status(500).json({ success: false, message: "Internal Server Error" })
