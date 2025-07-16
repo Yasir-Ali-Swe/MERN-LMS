@@ -1,6 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
-
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 const Sidbar = () => {
+    const {logout} = useContext(AuthContext);
     const pathname = useLocation().pathname;
     const Routes = [
         {
@@ -39,6 +41,9 @@ const Sidbar = () => {
                 {
                     Routes.map((route) => <Link key={route.name} to={route.path} className={`text-md lg:text-xl font-semibold block my-2 mx-2 rounded-lg py-2 px-5 lg:px-8 text-left text-textColor hover:bg-primary ${pathname === route.path && "bg-primary shadow-sm shadow-textColor"}`}>{route.name}</Link>)
                 }
+                <Link onClick={logout} className={`text-md lg:text-xl font-semibold block my-2 mx-2 rounded-lg py-2 px-5 lg:px-8 text-left text-textColor hover:bg-primary `}>
+                    Logout
+                </Link>
             </div>
         </div>
     )
