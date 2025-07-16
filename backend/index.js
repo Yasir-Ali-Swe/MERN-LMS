@@ -11,8 +11,13 @@ import enrollmentRouter from "./routers/enrollmentRouter.js";
 dotenv.config();
 const server = express();
 server.use(express.json());
-server.use(cors());
 server.use(cookieParser());
+server.use(cors(
+    {
+        origin: "http://localhost:5173",
+        credentials: true
+    }
+));
 const CONNECTION_STRING = process.env.CONNECTION_STRING;
 const PORT = process.env.PORT;
 mongoose.connect(CONNECTION_STRING).then(() => {
