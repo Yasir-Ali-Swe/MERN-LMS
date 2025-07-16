@@ -1,16 +1,17 @@
 import React from 'react'
-import { Link ,useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { AuthContext } from '../context/AuthContext'
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('yasir@gmail.com');
+  const [password, setPassword] = useState('1234');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(email, password);
-    navigate('/');
+    const result = await login({ email, password });
   }
   return (
     <div className='min-h-screen w-screen bg-primary flex justify-center items-center p-4'>
@@ -19,26 +20,26 @@ const Login = () => {
           <h1 className='text-2xl lg:text-3xl text-textColor font-black text-center'>Login</h1>
         </div>
         <div className='flex flex-col justify-center items-center px-4 lg:px-8'>
-          <input 
-            type="text" 
-            placeholder='Email' 
+          <input
+            type="text"
+            placeholder='Email'
             className='w-full h-12 lg:h-14 rounded-lg bg-primary text-textColor px-4 focus:outline-none focus:ring-2 focus:ring-tertiary my-3 lg:my-4 text-base lg:text-lg'
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input 
-            type="password" 
-            placeholder='Password' 
+          <input
+            type="password"
+            placeholder='Password'
             className='w-full h-12 lg:h-14 rounded-lg bg-primary text-textColor px-4 focus:outline-none focus:ring-2 focus:ring-tertiary my-3 lg:my-4 text-base lg:text-lg'
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button 
-            onClick={handleLogin} 
+          <button
+            onClick={handleLogin}
             className='w-full h-12 lg:h-14 rounded-lg bg-primary text-textColor my-3 lg:my-4 cursor-pointer text-base lg:text-lg font-semibold hover:bg-opacity-80 transition-colors'
           >
             Login
           </button>
           <h1 className='text-base lg:text-lg text-textColor font-bold text-center mt-4'>
-            Don't have an account? 
+            Don't have an account?
             <Link to={'/register'} className='text-textColor cursor-pointer underline ml-1'>Register Now</Link>
           </h1>
         </div>
