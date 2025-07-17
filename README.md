@@ -31,7 +31,7 @@ This project is **not for production**, just for learning and portfolio building
 
 ## ⚙️ Tech Stack
 
-- **Frontend:** React, Tailwind CSS
+- **Frontend:** React, Tailwind CSS.
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB with Mongoose
 - **Authentication:** JWT, bcrypt
