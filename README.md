@@ -36,7 +36,7 @@ This project is **not for production**, just for learning and portfolio building
 - **Database:** MongoDB with Mongoose
 - **Authentication:** JWT, bcrypt
 - **Optional Storage:** Cloudinary (for images/files)
-- **Deployment:** Vercel (Frontend), Render (Backend), MongoDB Atlas
+- **Deployment:** Vercel (Frontend), Render (Backend), MongoDB Atlas.
 
 ---
 
