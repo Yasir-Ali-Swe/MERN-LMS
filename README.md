@@ -25,7 +25,7 @@ This project is **not for production**, just for learning and portfolio building
 - **User Management:** Admin can add Instructors and manage users.
 - **Course Management:** Admins and Instructors can create, update, delete, and publish courses.
 - **Enrollment:** Students can browse published courses and enroll.
-- **Announcements:** Admins and Instructors can post announcements for courses or all students,
+- **Announcements:** Admins and Instructors can post announcements for courses or all students.
 
 ---
 
